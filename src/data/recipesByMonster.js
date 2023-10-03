@@ -4404,3 +4404,5 @@ const recipesByMonster = {
     },
   ],
 };
+
+export default recipesByMonster;
