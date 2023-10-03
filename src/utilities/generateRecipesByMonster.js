@@ -6,10 +6,11 @@ const generateRecipesByMonster = () => {
   recipes.forEach((recipe) => {
     const { base, mate, offspring } = recipe;
 
-    recipesByMonster[offspring] = [
-      ...recipesByMonster[offspring],
-      { base, mate },
-    ];
+    if (!recipesByMonster[offspring]) {
+      recipesByMonster[offspring] = [];
+    }
+
+    recipesByMonster[offspring].push({ base, mate });
   });
 
   console.log(recipesByMonster);
